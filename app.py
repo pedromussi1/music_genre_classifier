@@ -27,7 +27,9 @@ model = load_model(MODEL_PATH,
 # Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data_spectrograms")
-GENRES = sorted(os.listdir(DATA_DIR))
+GENRES = ["blues", "classical", "country", "disco", "hiphop",
+          "jazz", "metal", "pop", "reggae", "rock"]
+
 
 # Assign custom colors to genres (used for visualization)
 GENRE_COLORS = {
