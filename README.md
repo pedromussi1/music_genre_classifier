@@ -1,146 +1,93 @@
-# 🎵 Music Genre Classifier
+<h1 align="center">🎵 Music Genre Classifier</h1>
 
-A web-based music genre classification application built with **Python, TensorFlow/Keras, and Streamlit**. This project demonstrates end-to-end machine learning, from audio preprocessing and model training to deployment of a fully interactive web app.
+<p align="center">
+  <a href="https://youtu.be/WbnEZCk2rro"><img src="https://i.imgur.com/Ixowszi.gif" alt="YouTube Demonstration" width="800"></a>
+</p>
 
-Live Demo: [Streamlit App Link](YOUR_STREAMLIT_CLOUD_URL_HERE)
+<p align="center">A machine learning web application that classifies music tracks into genres using audio feature extraction and a trained convolutional neural network, powered by Streamlit, Librosa, and TensorFlow/Keras.</p>
 
----
+<h3>Try the live app here: <a href="https://musicgenreclassifier-eyuvharjirpxan82uz7qwy.streamlit.app/">https://musicgenreclassifier.streamlit.app/</a></h3>
 
-## **Project Overview**
+<h2>Description</h2>
+<p>The Music Genre Classifier is an interactive web application that analyzes short music clips and predicts the track’s genre. Using audio processing techniques such as Mel spectrograms, the system extracts meaningful features from audio signals and classifies tracks into genres like <b>Blues</b>, <b>Classical</b>, <b>Hip Hop</b>, <b>Jazz</b>, <b>Rock</b>, and more. This project demonstrates the application of deep learning in music classification, with potential use cases in music recommendation systems, audio analytics, and digital libraries.</p>
 
-This application allows users to upload a music clip and predicts its genre. The model is trained on the **GTZAN dataset**, which contains 10 genres:
+<h2>Languages and Utilities Used</h2>
+<ul>
+    <li><b>Python:</b> Core programming language for audio preprocessing, model training, and integration with Streamlit.</li>
+    <li><b>Streamlit:</b> Builds the interactive web interface for uploading tracks and displaying predictions.</li>
+    <li><b>Librosa:</b> Handles audio loading and extraction of Mel spectrogram features.</li>
+    <li><b>TensorFlow/Keras:</b> Trains and loads the convolutional neural network for music genre classification.</li>
+    <li><b>Matplotlib / Pillow:</b> Optional visualizations of audio spectrograms.</li>
+    <li><b>Soundfile:</b> Enables Streamlit to play uploaded audio files.</li>
+</ul>
 
-- Blues  
-- Classical  
-- Country  
-- Disco  
-- Hip Hop  
-- Jazz  
-- Metal  
-- Pop  
-- Reggae  
-- Rock  
+<h2>Environments Used</h2>
+<ul>
+    <li><b>Windows 11</b></li>
+    <li><b>Visual Studio Code</b></li>
+</ul>
 
-The prediction is displayed alongside a **confidence score** for each genre, giving users insight into how confident the model is in its classification.
+<h2>Installation</h2>
+<ol>
+    <li><strong>Clone the Repository:</strong>
+        <pre><code>git clone https://github.com/YOUR_USERNAME/music_genre_classifier.git
+cd music_genre_classifier</code></pre>
+    </li>
+    <li><strong>Create and Activate a Virtual Environment:</strong>
+        <pre><code>python -m venv .venv
+source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`</code></pre>
+    </li>
+    <li><strong>Install Dependencies:</strong>
+        <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+    <li><strong>Run the Application:</strong>
+        <pre><code>streamlit run app.py</code></pre>
+        The application will launch automatically in your browser.
+    </li>
+</ol>
 
----
+<h2>Usage</h2>
+<ol>
+    <li>Open the web application in your browser.</li>
+    <li>Upload a short audio track (`.wav` or `.au`).</li>
+    <li>The app extracts audio features and predicts the music genre using the trained model.</li>
+    <li>View the predicted genre along with confidence scores for each class.</li>
+</ol>
 
-## **Features**
+<h2>Code Structure</h2>
+<ul>
+    <li><strong>app.py:</strong> The main Streamlit app file responsible for UI, audio feature extraction, and genre prediction.</li>
+    <li><strong>models/music_genre_cnn.keras:</strong> The pre-trained CNN model loaded by the app.</li>
+    <li><strong>utils/audio_utils.py:</strong> Functions for loading and preprocessing audio files.</li>
+    <li><strong>utils/model_utils.py:</strong> Functions for loading the model and making predictions.</li>
+    <li><strong>requirements.txt:</strong> Contains all necessary Python dependencies.</li>
+</ul>
 
-- **Audio Upload:** Users can upload `.wav` or `.au` audio files for analysis.  
-- **Genre Prediction:** Outputs predicted genre and confidence scores.  
-- **Spectrogram Visualization:** (Optional) Visualizes audio as spectrograms for deeper understanding.  
-- **Interactive Web App:** Built with Streamlit for live online use.  
-- **Deployed Online:** Anyone can access and use the application without installing Python or libraries.
+<h2>Known Issues</h2>
+<ul>
+    <li>Only `.wav` and `.au` files are supported for audio uploads.</li>
+    <li>Background noise or very short clips may reduce prediction accuracy.</li>
+    <li>Live microphone input is not supported on Streamlit Cloud (upload audio instead).</li>
+</ul>
 
----
+<h2>Contributing</h2>
+<p>Contributions are welcome! Feel free to fork this repository, make improvements, and open a pull request. For major changes, please open an issue first to discuss your ideas.</p>
 
-## **Technology Stack**
+<h2>Deployment</h2>
+<p>The application is hosted on <b>Streamlit Cloud</b>, which automatically builds the environment based on <code>requirements.txt</code> and serves the app in a web-friendly format. Streamlit handles dependency installation, deployment, and version control integration with GitHub for seamless updates.</p>
 
-- **Python 3.x**  
-- **TensorFlow/Keras:** Convolutional Neural Network for genre classification  
-- **Librosa:** Audio preprocessing and spectrogram creation  
-- **Matplotlib / Pillow:** Visualizations  
-- **Streamlit:** Web interface and live deployment  
+<h2><a href="https://github.com/pedromussi1/music_genre_classifier/blob/main/train.py">Model Training Code (optional link)</a></h2>
 
----
+<h3>Upload Audio</h3>
+<p align="center">
+    <img src="https://i.imgur.com/OkD0t3r.png" alt="Upload Audio">
+</p>
+<p>The main interface allows users to upload an audio file. The application then processes the file, extracts features, and predicts the genre.</p>
 
-## **Repository Structure**
+<hr>
 
-music_genre_classifier/
-├── app.py # Main Streamlit web application
-├── models/
-│ └── music_genre_cnn.keras # Trained Keras model
-├── utils/
-│ ├── audio_utils.py # Functions for loading and preprocessing audio
-│ └── model_utils.py # Functions for model inference
-├── assets/ # Optional: images or UI assets
-├── requirements.txt # Python dependencies
-├── README.md
-
-
----
-
-## **Getting Started (Local Run)**
-
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/YOUR_USERNAME/music_genre_classifier.git
-cd music_genre_classifier
-```
-
-2. **Create a virtual environment:**
-   
-```
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
-venv\Scripts\activate     # Windows
-```
-
-3. **Install dependencies:**
-
-```
-pip install -r requirements.txt
-```
-
-4. **Run the app locally:**
-
-```
-streamlit run app.py
-```
-
-5. **Open the URL displayed in your browser to use the app.**
-
-## **How It Works**
-
-1. **Audio Preprocessing**  
-   - Uploaded audio files (`.wav` or `.au`) are loaded using `librosa`.  
-   - The audio is converted into a **mel-spectrogram**, which is a visual representation of the frequency spectrum over time.  
-
-2. **Model Prediction**  
-   - The preprocessed spectrogram is fed into the trained **CNN model** (`music_genre_cnn.keras`).  
-   - The model outputs probabilities for each genre.  
-
-3. **Display in Web App**  
-   - Streamlit displays the **predicted genre** with the **highest confidence**.  
-   - Confidence scores for all genres can also be shown as a **bar chart** or **percentage list**.
-
-4. **Optional Visualization**  
-   - Spectrogram images can be displayed in the app to help users understand **what the model “sees”** in the audio data.
-
-## **Results**
-
-The model achieves strong accuracy on the GTZAN dataset and provides reliable genre predictions for short audio clips.  
-
-**Example output in the app:**
-
-Predicted Genre: Jazz (87.4% confidence)
-
----
-
-## **Future Improvements**
-
-- Integrate **multiple audio file uploads** for batch predictions.  
-- Add **real-time audio analysis** for streaming music.  
-- Experiment with **pretrained audio embeddings** or hybrid **CNN + LSTM models**.  
-- Enhance the UI with **confidence bar charts** and **spectrogram visualizations**.  
-- Include **unit tests** for preprocessing functions to ensure robustness.
-
----
-
-## **License**
-
-This project is open-source and available under the **MIT License**.  
-Feel free to use, modify, or contribute.
-
----
-
-## **Contact**
-
-- **GitHub:** [YOUR_GITHUB_PROFILE](https://github.com/YOUR_USERNAME)  
-- **LinkedIn:** [YOUR_LINKEDIN_PROFILE](https://www.linkedin.com/in/YOUR_PROFILE)  
-- **Email:** YOUR_EMAIL_ADDRESS
-
----
-
+<h3>Genre Prediction Results</h3>
+<p align="center">
+    <img src="https://i.imgur.com/UcsH7k9.png" alt="Prediction Results">
+</p>
+<p>After analysis, the application displays the predicted genre and a probability chart representing confidence across different genres.</p>
